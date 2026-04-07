@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Operator Blueprint - Build Automated Income Streams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: #0a0f1e;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0f1e 0%, #141414 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .eyebrow {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00d9ff;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+        
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #00d9ff 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subheadline {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid #334155;
+            border-radius: 12px;
+            padding: 80px 40px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .video-placeholder .play-button {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: #0a0f1e;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .video-placeholder .play-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #0a0f1e;
+            padding: 22px 60px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.3);
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: #0f172a;
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .problem h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .problem-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 35px;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fbbf24;
+        }
+        
+        .problem-card p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(135deg, #0a0f1e 0%, #141414 100%);
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .solution h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .solution-intro {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Modules */
+        .modules {
+            background: #0f172a;
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .modules h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .module-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d9ff, #10b981);
+        }
+        
+        .module-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #00d9ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .module-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .module-card p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Proof Section */
+        .proof {
+            background: linear-gradient(135deg, #0a0f1e 0%, #141414 100%);
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .proof h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .testimonial p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .testimonial cite {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            font-weight: 700;
+            color: #00d9ff;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        
+        /* Offer Section */
+        .offer {
+            background: #0f172a;
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .offer h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .offer-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+        }
+        
+        .offer-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fbbf24;
+        }
+        
+        .offer-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .offer-card li {
+            color: #94a3b8;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .offer-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+        
+        /* Price Box */
+        .price-section {
+            background: linear-gradient(135deg, #0a0f1e 0%, #141414 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid #fbbf24;
+            border-radius: 16px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .price-label {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        
+        .price-original {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+        
+        .price-current {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #fbbf24;
+            margin-bottom: 30px;
+        }
+        
+        .guarantee-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .guarantee-box h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+        
+        .guarantee-box p {
+            color: #94a3b8;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: #0f172a;
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .faq h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #00d9ff;
+        }
+        
+        .faq-item p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #0a0f1e 0%, #141414 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0a0f1e;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+        }
+        
+        .footer p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .price-current {
+                font-size: 3.5rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <p class="eyebrow">⚠️ Warning: This Is Not Another AI Course</p>
+            <h1>You're Already <span class="highlight">Too Slow.</span></h1>
+            <p class="subheadline">The AI Operator Blueprint is a complete operating system for turning AI tools into automated income streams—without coding, without hiring, and without the paralysis of "figuring it out."</p>
+            
+            <div class="video-placeholder">
+                <div class="play-button">▶</div>
+                <p style="color: #94a3b8; font-size: 1.1rem;">Watch: The 72-Hour AI Operator Method</p>
+            </div>
+            
+            <a href="#offer" class="cta-button">Get The Blueprint — $97</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>The Real Problem Isn't AI. It's <span style="color: #fbbf24;">Operator Discipline.</span></h2>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>❌ The Course Collector</h3>
+                    <p>You've bought 12 AI courses. Watched 100+ YouTube videos. Built zero automated income streams. Information without execution is just entertainment.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ The Tool Hopper</h3>
+                    <p>Every week a new "game-changing" AI tool. You sign up, play for 3 days, abandon it. No system. No compounding. Just chaos.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ The Perfectionist</h3>
+                    <p>You've been "planning your AI strategy" for 6 months. Meanwhile, AI Operators have built 5 income streams. Speed beats perfection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2>What If You Had An <span style="color: #10b981;">Operating System</span> For AI?</h2>
+            <p class="solution-intro">Not another tool. Not another tactic. A complete framework for building automated income with AI—tested, proven, and ready to deploy.</p>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules">
+        <div class="container">
+            <h2>The Complete <span style="color: #00d9ff;">5-Module System</span></h2>
+            
+            <div class="module-grid">
+                <div class="module-card">
+                    <p class="module-number">Module 1</p>
+                    <h3>The Operator Mindset</h3>
+                    <p>Why speed beats perfection. The 72-hour validation rule. Decision frameworks that eliminate analysis paralysis. How to kill bad ideas fast.</p>
+                </div>
+                <div class="module-card">
+                    <p class="module-number">Module 2</p>
+                    <h3>AI Stack Architecture</h3>
+                    <p>The exact AI tools that compound. Building your "AI command center" for under $50/month. Connecting tools into revenue systems.</p>
+                </div>
+                <div class="module-card">
+                    <p class="module-number">Module 3</p>
+                    <h3>The Asset Factory</h3>
+                    <p>The 5 asset types that generate automated income. Building each one with AI assistance. Templates and workflows for rapid creation.</p>
+                </div>
+                <div class="module-card">
+                    <p class="module-number">Module 4</p>
+                    <h3>Traffic & Conversion</h3>
+                    <p>Cold traffic without an existing audience. The "evergreen engine" that runs while you sleep. Conversion optimization with AI testing.</p>
+                </div>
+                <div class="module-card">
+                    <p class="module-number">Module 5</p>
+                    <h3>Operator Optimization</h3>
+                    <p>Analytics that matter. Scaling systems. Building your AI team. The compounding flywheel where each asset makes the next easier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof">
+        <div class="container">
+            <h2>Real Operators. <span style="color: #10b981;">Real Results.</span></h2>
+            
+            <div class="testimonial">
+                <p>"I launched my first digital product in 11 days using the Asset Factory module. Made $1,247 in the first week. I spent 6 months 'planning' before this. The Blueprint isn't a course—it's an operating system that actually works."</p>
+                <cite>— Marcus T., Early Operator</cite>
+            </div>
+            
+            <div class="testimonial">
+                <p>"The n8n workflows alone saved me 15+ hours per week. But the real value was learning which automations actually matter for revenue. I went from AI curious to AI Operator in 3 weeks."</p>
+                <cite>— Sarah K., SaaS Founder</cite>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$10K+</div>
+                    <div class="stat-label">Affiliate Commissions (6 months)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Automated Systems Running</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">72hrs</div>
+                    <div class="stat-label">Average Validation Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.7</div>
+                    <div class="stat-label">Days to Build Asset (avg)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer">
+        <div class="container">
+            <h2>Everything You Get <span style="color: #fbbf24;">(The Complete System)</span></h2>
+            
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <h3>🎓 5 Core Training Modules</h3>
+                    <ul>
+                        <li>Video walkthroughs of entire system</li>
+                        <li>Watch over my shoulder as I build</li>
+                        <li>Real examples, not theory</li>
+                        <li>Lifetime access + updates</li>
+                    </ul>
+                </div>
+                <div class="offer-card">
+                    <h3>🛠️ AI Operator Toolkit</h3>
+                    <ul>
+                        <li>47 proven prompts for any task</li>
+                        <li>12 n8n workflow templates</li>
+                        <li>Skill Framework builder</li>
+                        <li>Affiliate engine template</li>
+                    </ul>
+                </div>
+                <div class="offer-card">
+                    <h3>📋 Asset Templates</h3>
+                    <ul>
+                        <li>Sales page templates</li>
+                        <li>VSL scripts & slides</li>
+                        <li>Bridge page frameworks</li>
+                        <li>Email sequence blueprints</li>
+                    </ul>
+                </div>
+                <div class="offer-card">
+                    <h3>👥 Operator Community</h3>
+                    <ul>
+                        <li>Private Discord access</li>
+                        <li>Weekly live Q&A calls</li>
+                        <li>Direct feedback on builds</li>
+                        <li>Network with other operators</li>
+                    </ul>
+                </div>
+                <div class="offer-card">
+                    <h3>🚀 30-Day Launch Accelerator</h3>
+                    <ul>
+                        <li>Day-by-day action plan</li>
+                        <li>Launch your first asset in 30 days</li>
+                        <li>Accountability checkpoints</li>
+                        <li>Success metrics tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section id="offer" class="price-section">
+        <div class="container">
+            <div class="price-box">
+                <p class="price-label">Limited Time — Early Operator Pricing</p>
+                <p class="price-original">Total Value: $1,285</p>
+                <p class="price-current">$97</p>
+                
+                <div class="guarantee-box">
+                    <h3>🛡️ 30-Day "Launch An Asset" Guarantee</h3>
+                    <p>Join today. Use the system. Build your first asset. If you don't launch within 30 days, get a full refund. No questions asked.</p>
+                </div>
+                
+                <a href="#" class="cta-button" style="display: inline-block; margin-top: 20px;">Get Instant Access — $97</a>
+                
+                <p style="margin-top: 25px; color: #64748b; font-size: 0.95rem;">
+                    🔒 Secure payment. Instant delivery. Start building today.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked <span style="color: #00d9ff;">Questions</span></h2>
+            
+            <div class="faq-item">
+                <h3>"I don't have time for this."</h3>
+                <p>The first module teaches time multiplication. You'll learn how to compress 40 hours of work into 4 using AI. One automated system saves more time than the course takes to complete.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>"I'm not technical enough."</h3>
+                <p>Neither was I. The Blueprint assumes zero coding knowledge. Everything is template-based, drag-and-drop, or copy-paste. If you can use Gmail, you can use this system.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>"What if I don't have an audience?"</h3>
+                <p>Perfect. The traffic systems in Module 4 work without followers, email lists, or existing platforms. We cover 5 cold traffic strategies that generate sales from day one.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>"How is this different from other AI courses?"</h3>
+                <p>Most courses teach AI tools. We teach AI <strong>operations</strong>—the discipline of building revenue systems. You get frameworks, workflows, and templates, not just theory. Plus the Operator Community for ongoing support.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>"What if it doesn't work for me?"</h3>
+                <p>30-day guarantee. If you don't launch at least one income-generating asset in 30 days, email me for a full refund. You either become an AI Operator, or you get your money back.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Become an AI Operator Today</h2>
+            <p>Stop learning. Start building. Start earning.</p>
+            <a href="#offer" class="cta-button">Get The Blueprint — $97</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 AI Operator Blueprint. All rights reserved.</p>
+            <p style="margin-top: 10px;">Questions? Email support@aioperatorblueprint.com</p>
+        </div>
+    </footer>
+
+    <!-- Stripe Checkout -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('pk_test_51THwsQ0lnf05XgL9ohtd3ciloXeBMuiX2pJRZu9rehXSZDNG4KhElliteyqFwLSlVJYgFL4g1MWBOp63ARYRUICi00tveXLbJp');
+        const priceId = 'price_1TJepE0lnf05XgL95JUXNGoS';
+        
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                stripe.redirectToCheckout({
+                    lineItems: [{price: priceId, quantity: 1}],
+                    mode: 'payment',
+                    successUrl: window.location.origin + '/success.html',
+                    cancelUrl: window.location.origin + '/cancel.html',
+                }).then(function(result) {
+                    if (result.error) {
+                        alert(result.error.message);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
