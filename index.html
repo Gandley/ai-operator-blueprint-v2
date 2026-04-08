@@ -745,12 +745,28 @@
     <!-- Stripe Checkout -->
     <script src="https://js.stripe.com/v3/"></script>
     <script>
+        // Initialize Stripe
         const stripe = Stripe('pk_test_51THwsQ0lnf05XgL9ohtd3ciloXeBMuiX2pJRZu9rehXSZDNG4KhElliteyqFwLSlVJYgFL4g1MWBOp63ARYRUICi00tveXLbJp');
         const priceId = 'price_1TJepE0lnf05XgL95JUXNGoS';
         
-        document.querySelectorAll('.cta-button').forEach(button => {
+        // Debug: Log when script loads
+        console.log('Stripe script loaded');
+        
+        // Add click handlers to all CTA buttons
+        document.querySelectorAll('.cta-button').forEach((button, index) => {
+            console.log('Found button', index, button.textContent.trim());
+            
+            // Remove href to prevent anchor navigation
+            if (button.hasAttribute('href')) {
+                button.removeAttribute('href');
+                button.style.cursor = 'pointer';
+                console.log('Removed href from button', index);
+            }
+            
             button.addEventListener('click', function(e) {
+                console.log('Button clicked!', index);
                 e.preventDefault();
+                e.stopPropagation();
                 
                 stripe.redirectToCheckout({
                     lineItems: [{price: priceId, quantity: 1}],
@@ -759,11 +775,17 @@
                     cancelUrl: window.location.origin + '/cancel.html',
                 }).then(function(result) {
                     if (result.error) {
+                        console.error('Stripe error:', result.error);
                         alert(result.error.message);
                     }
+                }).catch(function(err) {
+                    console.error('Checkout error:', err);
+                    alert('Error: ' + err.message);
                 });
             });
         });
+        
+        console.log('Total buttons found:', document.querySelectorAll('.cta-button').length);
     </script>
 </body>
 </html><!-- Deploy: Tue Apr  7 20:09:56 UTC 2026 -->
